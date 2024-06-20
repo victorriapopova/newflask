@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Дополнительные стили можно добавить здесь */
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">{{ title }}</h1>
+        <div class="row">
+            {% for headphone in headphones %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ headphone.image_url }}" alt="{{ headphone.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ headphone.name }}</h5>
+                        <p class="card-text">{{ headphone.description }}</p>
+                        <p class="card-text">Цена: {{ headphone.price }} грн</p>
+                        <a href="#" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
